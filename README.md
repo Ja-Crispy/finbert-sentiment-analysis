@@ -2,6 +2,10 @@
 
 This code performs sentiment analysis on financial headlines using the `ProsusAI/finbert` model. It leverages the `transformers` library for natural language processing and `wandb` for logging the results. The code takes advantage of multiprocessing to speed up the prediction process.
 
+## Dataset
+The dataset used here is "Daily Financial News for 6000+ stocks", which is available on Kaggle. It contains ~4m financial headlines for 6000+ stocks from 2009-2020. 
+Here's the link to the [dataset](https://www.kaggle.com/datasets/miguelaenlle/massive-stock-news-analysis-db-for-nlpbacktests?select=raw_analyst_ratings.csv)
+
 ## Model
 The sentiment analysis is conducted using the `ProsusAI/finbert` model. This model is specifically trained for financial sentiment analysis tasks and provides accurate predictions for positive, negative, and neutral sentiments.
 
@@ -21,6 +25,6 @@ To enhance performance, the code utilizes the multiprocessing approach. Here are
 
 By employing multiprocessing, the code optimizes the sentiment analysis pipeline, making it well-suited for handling large amounts of financial headlines efficiently.
 
-**Note:** Ensure that the input data is properly formatted and stored in a CSV file before running the code.
+**Note:** Ensure that the input data is properly formatted and stored in a CSV file before running the code. As WandB has a 200,000 entry limit for free accounts, the num_entries variable in preprocessing.py should be set to 200,000 or less. This will ensure that the code runs without any errors.
 
 For any further details or inquiries, please refer to the code and its comments.
